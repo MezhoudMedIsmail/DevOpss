@@ -17,7 +17,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: ismail2222/backapp
+    image: ismail2222/train
     restart: on-failure
     env_file: ./.env
     ports:
