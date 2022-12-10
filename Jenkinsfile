@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    //environment {
-       // DOCKERHUB_CREDENTIALS = credentials('dockerHub')
-   // }
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerHub')
+    }
 
     stages {
         stage('Git')  {
@@ -53,26 +53,26 @@ pipeline {
         
         
         
- 	//stage("Building Docker Image") {
-         //       steps{
-           //         sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/tpachat .'
-           //     }
-      //  }
-	//stage("Login to DockerHub") {
-         //       steps{
-         //           sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
-      //          }
-     //   }
-	//stage("Push to DockerHub") {
-        //        steps{
-        //            sh 'docker push $DOCKERHUB_CREDENTIALS_USR/tpachat'
-          //      }
-     //   }
-	//stage("Docker-compose") {
-          //      steps{
-           //         sh 'docker-compose up --force-recreate -d '
-           //     }
-       // }
+ 	stage("Building Docker Image") {
+                steps{
+                    sh 'docker build -t $DOCKERHUB_CREDENTIALS_USR/train .'
+                }
+        }
+	stage("Login to DockerHub") {
+                steps{
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
+                }
+        }
+	stage("Push to DockerHub") {
+                steps{
+                    sh 'docker push $DOCKERHUB_CREDENTIALS_USR/train'
+                }
+        }
+	stage("Docker-compose") {
+                steps{
+                    sh 'docker-compose up -d '
+                }
+        }
 
          
 
