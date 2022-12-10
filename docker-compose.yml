@@ -13,19 +13,11 @@ services:
     volumes:
       - db:/var/lib/mysql
       
-      
-  Front:
-    image: ismail2222/frontapp
-    restart: on-failure
-    ports:
-      - "80:80"
-    depends_on:
-      - app  
           
   app:
     depends_on:
       - mysqldb
-    image: ismail2222/tpachat
+    image: ismail2222/backapp
     restart: on-failure
     env_file: ./.env
     ports:
