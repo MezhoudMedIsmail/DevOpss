@@ -104,7 +104,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 <span class="nc bnc" id="L104" title="All 2 branches missed.">            if (lesvoyages.get(i).getTrain().getNbPlaceLibre() != 0) {</span>
 <span class="nc" id="L105">                lesvoyages.get(i).getMesVoyageurs().add(c);</span>
 <span class="nc" id="L106">                lesvoyages.get(i).getTrain().setNbPlaceLibre(lesvoyages.get(i).getTrain().getNbPlaceLibre() - 1);</span>
-            } else
+<span class="nc" id="L107">            } else</span>
 <span class="nc" id="L108">                System.out.print(&quot;Pas de place disponible pour &quot; + VoyageurRepository.findById(idVoyageur).get());</span>
 <span class="nc" id="L109">            voyageRepository.save(lesvoyages.get(i));</span>
         }
