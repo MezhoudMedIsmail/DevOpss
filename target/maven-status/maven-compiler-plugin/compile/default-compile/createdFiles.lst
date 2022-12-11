@@ -1,5 +1,6 @@
 tn\esprit\spring\controller\RestControllerVoyageur.class
 tn\esprit\spring\entities\Voyageur.class
+tn\esprit\spring\SpringFoxSwaggerConfig.class
 tn\esprit\spring\config\LoggingAspect.class
 tn\esprit\spring\services\VoyageServiceImpl.class
 tn\esprit\spring\config\PerformanceAspect.class

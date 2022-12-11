@@ -11,11 +11,15 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Voyageur implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -36,39 +40,13 @@ public class Voyageur implements Serializable{
 		this.nomVoyageur = nomVoyageur;
 	}
 
-	public Voyageur(Long idVoyageur, String nomVoyageur, List<Voyage> mesvoyages) {
-		super();
-		this.idVoyageur = idVoyageur;
-		this.nomVoyageur = nomVoyageur;
-		this.mesvoyages = mesvoyages;
-	}
 
-	public void setMesvoyages(List<Voyage> mesvoyages) {
-		this.mesvoyages = mesvoyages;
-	}
 
 	@ManyToMany(mappedBy = "mesVoyageurs")
     public List<Voyage> mesvoyages;
 
-	public Long getIdVoyageur() {
-		return idVoyageur;
-	}
-
-	public void setIdVoyageur(Long idVoyageur) {
-		this.idVoyageur = idVoyageur;
-	}
-
-	public String getNomVoyageur() {
-		return nomVoyageur;
-	}
-
-	public void setNomVoyageur(String nomVoyageur) {
-		this.nomVoyageur = nomVoyageur;
-	}
-
-	public Voyageur() {
-		super();
-	}
 	
+
+
 	
 }

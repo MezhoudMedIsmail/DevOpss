@@ -3,13 +3,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.junit.Test;
-import org.junit.jupiter.api.Order;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -36,7 +33,7 @@ public class TrainServiceImplTest {
 		
 		
 		  @Test
-		  @Order(1)
+		
 			public void ajouterVoyageurTest() {
 			  when(vRepository.save(v1)).thenReturn(v1);
 	    	assertNotNull(v1);
@@ -47,7 +44,7 @@ public class TrainServiceImplTest {
 			System.out.println("add operators works !");	
 	}
 		  @Test 
-		  @Order(2)
+		  
 		 	   public void recupererAll() {
 		 	    	when(vRepository.findAll()).thenReturn(Stream
 		 	    			.of(v1,v2)
