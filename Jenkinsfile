@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-        stage('Git')  {
+        stage('Git Pulling')  {
             steps {
                 echo 'Getting Backend project from Git';
                  git branch:'main',
